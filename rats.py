@@ -9,7 +9,8 @@ class Rat:
     return str
 
   def __repr__(self):
-    rep = f"{[self.sex, self.weight]}"
+    #rep = f"{[self.sex, self.weight]}"
+    rep = f"{self.sex}{self.weight}"
     return rep
 
   def getSex(self):
@@ -26,6 +27,9 @@ class Rat:
 
   def mutate(self, mutation):
     self.weight = self.weight * mutation
+
+  def incrementLitters(self):
+    self.litters += 1
 
   def __lt__(self, other):
     return self.weight < other.weight
